@@ -1,5 +1,6 @@
 import datetime
 import requests
+import smtplib
 import time
 
 
@@ -11,8 +12,8 @@ def limit_alert():
     base_url = "https://coincheck.com"
     api_rate = "/api/rate/"
     proxies = {
-        'http': 'http://proxy.jp:8080',
-        'https': 'http://proxy.jp:8080',
+        'http': '',
+        'https': '',
     }
     interval = 60   # sec
     upper_limit = 760000    # JPY
