@@ -1,13 +1,6 @@
 import json
+import Settings
 from requests_oauthlib import OAuth1Session # OAuth認証用
-
-# 認証情報
-KEY = {
-    "Consumer_Key": "",
-    "Consumer_Secret": "",
-    "Access_Token": "",
-    "Access_Token_Secret": ""
-}
 
 # 各種URL
 URL = {
@@ -18,7 +11,8 @@ URL = {
 }
 
 # 認証情報を使ってセッションを作成
-twitter = OAuth1Session(KEY["Consumer_Key"], KEY["Consumer_Secret"], KEY["Access_Token"], KEY["Access_Token_Secret"])
+twitter = OAuth1Session(Settings.twitter["Consumer_Key"], Settings.twitter["Consumer_Secret"],
+    Settings.twitter["Access_Token"], Settings.twitter["Access_Token_Secret"])
 
 
 def get_json(url, params=None):
